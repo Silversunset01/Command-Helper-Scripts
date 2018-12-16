@@ -1,0 +1,9 @@
+#~default:/rain $ = >>>
+#  if($ == 'on') {
+#	runas(~console,'/weather rain');
+#	die(color(GOLD).'Rain ON');
+#  } else {
+#	runas(~console,'/weather clear');
+#	die(color(GOLD).'Rain OFF');
+#  }
+#<<<

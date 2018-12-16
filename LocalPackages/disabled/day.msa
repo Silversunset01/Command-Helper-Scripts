@@ -1,0 +1,4 @@
+#~default:/day [$] = >>>
+#	runas(~console,'/time set day');
+#	die(color(GOLD).'The time is now DAY');
+#<<<

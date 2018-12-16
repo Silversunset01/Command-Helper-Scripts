@@ -1,0 +1,9 @@
+#~default:/list = >>>
+#	@playerList = '';
+#	@playerArray = all_players();
+#	foreach(@player in @playerArray) {
+#		# Append our player's name to the end of @playerList string
+#		@playerList .= @player . ' ';
+#	}
+#	msg(@playerList);
+#<<<

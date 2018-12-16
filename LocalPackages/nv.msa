@@ -1,0 +1,12 @@
+~default:/nv [$min=60] [$] = >>>
+	if ($min === 'clear') {
+		runas(~console,'/effect clear '.player().' minecraft:night_vision');
+		die(color(GOLD).'Night Vision disabled');
+	} else if ($min > 240) {
+		die(color(GOLD).'Please choose a number between 1 and 240');
+	} else {
+		@sec = $min * 60;
+		runas(~console,'/effect give '.player().' minecraft:night_vision '.@sec.' 0 true');
+		die(color(GOLD).'Night Vision enabled for '.$min.' minutes');
+	}
+<<<

@@ -1,0 +1,6 @@
+~admin:/thor $player [$] = >>>
+	lightning(ploc($player));
+	msg(color(LIGHT_PURPLE).'Thou hast smitten the evil player '.$player.' with thy mighty hand');
+	tmsg($player, color('red').if($, $, 'You have been smitten by Thor\'s Hammer!'));
+	pkill($player);
+<<<

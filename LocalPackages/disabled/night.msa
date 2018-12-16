@@ -1,0 +1,4 @@
+#~default:/night [$] = >>>
+#	runas(~console,'/time set night');
+#	die(color(GOLD).'The time is now NIGHT');
+#<<<

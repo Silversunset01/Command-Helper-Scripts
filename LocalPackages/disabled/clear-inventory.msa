@@ -1,0 +1,4 @@
+#~default:/clear [$] = >>>
+#	runas(~console,'/clear '.player());
+#	msg(color(GOLD).'Inventory cleared!');
+#<<<
