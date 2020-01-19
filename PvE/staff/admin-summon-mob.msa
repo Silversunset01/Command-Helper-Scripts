@@ -1,0 +1,15 @@
+*:/spawnmob [$type] [$] = >>>
+	if (!has_permission(player(), 'LT.admin.adminmode')){
+		msg(color(RED) . 'You do not have permission to run this command. Please notify staff if this is in error.');
+	} else {
+		@pCoords = pinfo(player(),1)
+		@x = floor(@pCoords[0]);
+		@y = floor(@pCoords[1])+1;
+		@z = floor(@pCoords[2]);
+
+		runas(~console,'/summon minecraft:'.$type.' '.@x.' '.@y.' '.@z);
+	}
+<<<
+
+
+
