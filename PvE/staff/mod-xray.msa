@@ -1,0 +1,30 @@
+*:/'xray-top' [$time=1d] = >>>
+	if (!has_permission(player(), 'LT.moderator.modmode')){
+		msg(color(RED) . 'You do not have permission to run this command. Please notify staff if this is in error.');
+	} else {
+		run('/lb sum players destroyed block diamond_ore since '.$time)
+	}
+<<<
+
+*:/'xray-edits' $player [$time=28d] = >>>
+	if (!has_permission(player(), 'LT.moderator.modmode')){
+		msg(color(RED) . 'You do not have permission to run this command. Please notify staff if this is in error.');
+	} else {
+		run('/lb coords destroyed block diamond_ore player '.$player.' since '.$time)		
+	}
+<<<
+
+*:/'xray-rb' $player = >>>
+	if (!has_permission(player(), 'LT.moderator.modmode')){
+		msg(color(RED) . 'You do not have permission to run this command. Please notify staff if this is in error.');
+	} else {
+		@days = 30
+		@delay = 45
+		set_timeout(@delay * 1000, closure(
+			run('/lb redo destroyed block gold_ore iron_ore coal_ore lapis_ore diamond_ore redstone_ore emerald_ore quartz_ore mob_spawner player '.$player.' since '.@days.' days')
+		))
+		set_timeout(2 * 1000, closure(
+			msg(color(GOLD).'Ore destructions by '.$player.' will be redone in '.@delay.' seconds.')
+		))	
+	}
+<<<

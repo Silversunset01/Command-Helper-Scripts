@@ -1,0 +1,5 @@
+*:/who [$] = >>>
+	run('/mv who world');
+	run('/mv who world_nether');
+	run('/mv who world_the_end');
+<<<

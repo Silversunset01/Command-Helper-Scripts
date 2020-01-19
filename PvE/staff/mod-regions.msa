@@ -1,0 +1,41 @@
+*:/cregion $region $player [$] = >>>
+	if (!has_permission(player(), 'LT.moderator.modmode')){
+		msg(color(RED) . 'You do not have permission to run this command. Please notify staff if this is in error.');
+	} else {
+		run('/rg create' $region $player);
+		set_timeout(1000, closure(run_cmd('/addflags ' . $region)));
+	}
+	
+<<<
+
+*:/addflags $region [$] = >>>
+	if (!has_permission(player(), 'LT.moderator.modmode')){
+		msg(color(RED) . 'You do not have permission to run this command. Please notify staff if this is in error.');
+	} else {
+		run('/rg flag '.$region.' damage-animals allow');
+		run('/rg flag '.$region.' chest-access allow');
+		run('/rg flag '.$region.' use allow');
+		run('/rg flag '.$region.' interact allow');
+		run('/rg flag '.$region.' vehicle-destroy allow');
+		run('/rg flag '.$region.' ride allow');	
+	}
+<<<
+
+*:/worldflags [$] = >>>
+	if (!has_permission(player(), 'LT.admin.adminmode')){
+		msg(color(RED) . 'You do not have permission to run this command. Please notify staff if this is in error.');
+	} else {
+		run('/rg flag __global__ damage-animals allow');
+		run('/rg flag __global__ pvp deny');
+		run('/rg flag __global__ fire-spread deny');
+		run('/rg flag __global__ chest-access allow');
+		run('/rg flag __global__ sleep allow');
+		run('/rg flag __global__ potion-splash allow');
+		run('/rg flag __global__ use allow');
+		run('/rg flag __global__ vehicle-destroy allow');
+		run('/rg flag __global__ interact allow');
+		run('/rg flag __global__ ride allow');
+		run('/rg flag __global__ vehicle-place allow');
+		
+	}
+<<<

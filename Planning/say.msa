@@ -1,0 +1,10 @@
+*:/say $ = >>>
+	if (player() == '~console') {
+		broadcast('§a[§2CONSOLE§a] ' . $);
+		die();
+	}
+<<<
+
+#*:/s $message = >>>
+#	broadcast('&o ' $message);
+#<<<

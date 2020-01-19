@@ -1,0 +1,52 @@
+/spawn = run('/mvspawn');
+
+*:/adminmode [$] = >>>
+	if (!has_permission(player(), 'LT.admin')) {
+		die();
+		#msg(color(RED) . 'You do not have permission to run this command. Please notify staff if this is in error.');
+	} else {
+		if(has_permission(player(), 'LT.moderator.modmode')) {
+	
+			if(!has_permission(player(), 'LT.admin.adminmode')) {
+				runas(~console,'/lp user '.player().' promote admins');
+				die(color(GREEN).'You are now in Admin Mode');
+			} else {
+				runas(~console,'/gamemode survival ' . player());
+				runas(~console,'/lp user '.player().' demote admins');
+				die(color(GREEN).'You are no longer in Admin Mode');
+			} 
+			
+		} else {
+			msg(color(RED).'You must be in modmode to run this command');
+		}
+	
+	}
+<<<
+
+*:/ci toggle [$] = >>>
+	if (!has_permission(player(), 'LT.moderator')) {
+		msg(color(RED) . 'You do not have permission to run this command. Please notify staff if this is in error.');
+	} else {
+		run('/clearinventoryconfirmtoggle'); 
+	}
+<<<
+
+*:/nv [$min=60] [$] = >>>
+	if (!has_permission(player(), 'LT.moderator')) {
+		msg(color(RED) . 'You do not have permission to run this command. Please notify staff if this is in error.');
+	} else {
+		if(has_permission(player(), 'LT.admin.adminmode') || has_permission(player(), 'LT.moderator.modmode')) {
+		
+			if ($min === 'clear') {
+				runas(~console,'/effect clear '.player().' minecraft:night_vision');
+				die(color(GOLD).'Night Vision disabled');
+			} else if ($min > 240) {
+				die(color(GOLD).'Please choose a number between 1 and 240');
+			} else {
+				@sec = $min * 60;
+				runas(~console,'/effect give '.player().' minecraft:night_vision '.@sec.' 0 true');
+				die(color(GOLD).'Night Vision enabled for '.$min.' minutes');
+			}
+		}
+	}
+<<<

@@ -1,0 +1,25 @@
+*:/golemspawner [$tier] = >>>
+	if (!has_permission(player(), 'LT.admin.adminmode')){
+		msg(color(RED) . 'You do not have permission to run this command. Please notify staff if this is in error.');
+	} else {
+		@t = integer($tier);
+		@pCoords = pinfo(player(),1)
+		@x = floor(@pCoords[0]);
+		@y = floor(@pCoords[1]);
+		@z = floor(@pCoords[2]);
+		
+		if (!is_integer(@t)) {
+			msg(color(RED)."The tier must be a positive integer.");
+			die();
+		}
+		if (@t < 0) {
+			msg(color(RED)."The tier must be a positive integer.");
+			die();
+		} else if (@t > 20) {
+			msg(color(RED)."Let's not get crazy...");
+			die();
+		}
+		runas(~console,'/setblock '.@x.' '.@y.' '.@z.' minecraft:spawner{SpawnCount:'.@t.',SpawnRange:4,Delay:20,MinSpawnDelay:1000,MaxSpawnDelay:1000,MaxNearbyEntities:25,RequiredPlayerRange:25,SpawnData:{id:"minecraft:iron_golem",CustomNameVisible:1b,PlayerCreated:0b,CustomName:"{\\"text\\":\\"Tier '.@t.'\\"}"}} replace');
+	}
+	
+<<<

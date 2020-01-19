@@ -1,0 +1,21 @@
+*:/itemname [$] = >>>
+	if (!has_permission(player(), 'LT.admin')){
+		msg(color(RED) . 'You do not have permission to run this command. Please notify staff if this is in error.');
+	} else {
+		@held = pinv(player(), null);
+		@meta = get_itemmeta(null);
+		if($ == '') {
+			msg(color(red).'Usage: /itemname <name>');
+			die();
+		}
+		if (is_null(@held)) {
+			msg(color(red).'You need to be holding something to rename.');
+			die();
+		}
+		if (is_null(@meta)) {
+			@meta = array();
+		}
+		@meta['display'] = colorize($);
+		set_itemmeta(null, @meta);
+	}
+<<<

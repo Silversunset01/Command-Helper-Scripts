@@ -1,0 +1,3 @@
+*:/allrecipes [$] = >>>
+	runas(~console,'/minecraft:recipe give ' . player() . ' *');
+<<<

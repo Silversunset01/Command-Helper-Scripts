@@ -1,0 +1,7 @@
+*:/silversunset [$] = >>>
+	if (!has_permission(player(), 'server.staff')){
+		msg(color(RED) . 'You do not have permission to run this command. Please notify staff if this is in error.');
+	} else {
+		#some code here
+	}
+<<<

@@ -1,1 +1,0 @@
-#~default:/time $time = runas(~console,'/time set '.$time);

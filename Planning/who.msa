@@ -1,5 +1,6 @@
 ~default:/who [$] = >>>
 	run('/mv who planning-23');
+	run('/mv who planning-24');
 	run('/mv who lobby');
 	run('/mv who examples');
 <<<

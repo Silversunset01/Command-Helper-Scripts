@@ -1,0 +1,44 @@
+*:/promote $user = >>>
+	if (!has_permission(player(), 'LT.admin')){
+		msg(color(RED) . 'You do not have permission to run this command. Please notify staff if this is in error.');
+	} else {
+		run('/lp user ' . $user . ' promote users');
+	}
+<<<
+
+
+*:/demote $user = >>>
+	if (!has_permission(player(), 'LT.admin')){
+		msg(color(RED) . 'You do not have permission to run this command. Please notify staff if this is in error.');
+	} else {
+		run('/lp user ' . $user . ' demote users');
+	}
+<<<
+
+
+*:/allowperm $group $perm = >>>
+	if (!has_permission(player(), 'LT.admin')){
+		msg(color(RED) . 'You do not have permission to run this command. Please notify staff if this is in error.');
+	} else {
+		run('/lp group '.$group.' permission set '.$perm.' true');
+	}
+
+<<<
+
+*:/denyperm $group $perm = >>>
+	if (!has_permission(player(), 'LT.admin')){
+		msg(color(RED) . 'You do not have permission to run this command. Please notify staff if this is in error.');
+	} else {
+		run('/lp group '.$group.' permission set '.$perm.' false');
+	}
+
+<<<
+
+
+*:/removeperm $group $perm = >>>
+	if (!has_permission(player(), 'LT.admin')){
+		msg(color(RED) . 'You do not have permission to run this command. Please notify staff if this is in error.');
+	} else {
+		run('/lp group '.$group.' permission unset '.$perm);
+	}	
+<<<

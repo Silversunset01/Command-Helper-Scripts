@@ -1,6 +1,6 @@
 *:/say $ = >>>
 	if (player() == '~console') {
-		broadcast('§a[Server] ' . $);
+		broadcast('§a[§2CONSOLE§a] ' . $);
 		die();
 	}
 <<<

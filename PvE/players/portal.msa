@@ -1,0 +1,19 @@
+*:/portal [$] = >>>
+	@pWorld = pinfo(player(),7);
+	@pCoords = pinfo(player(),1);		
+	
+	if (@pWorld == 'world_nether') {
+		@x = floor(@pCoords[0] * 8);
+		@y = floor(@pCoords[1]);
+		@z = floor(@pCoords[2] * 8);
+		die(colorize('&aYour overworld-side portal coords should be &bx:'.@x.', z:'.@z)); 
+	} else if (@pWorld = 'world') {
+		@x = floor(@pCoords[0] / 8);
+		@y = floor(@pCoords[1]);
+		@z = floor(@pCoords[2] / 8);
+		die(colorize('&aYour nether-side portal coords should be &bx:'.@x.', z:'.@z));
+	} else {
+	
+	}
+
+<<<

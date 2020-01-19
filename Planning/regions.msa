@@ -1,0 +1,26 @@
+#=========================================================================#
+#                          COMMAND HELPER ALIASES
+#=========================================================================#
+
+# Regions
+/weallow $region = run('/rg flag -g owners '.$region.' worldedit allow');
+/wedeny $region = run('/rg flag '.$region.' worldedit');
+
+~admin:/cregion $region = >>>
+	die(color(RED).'The command is /cregion <region name> <username>');
+<<<
+
+~admin:/cregion $region $player [$] = >>>
+	run('/rg create' $region $player);
+	set_timeout(1000, closure(run_cmd('/addflags ' . $region)));
+<<<
+
+~:/addflags $region [$] = >>>
+	run('/rg flag '.$region.' damage-animals allow');
+	run('/rg flag '.$region.' chest-access allow');
+	run('/rg flag '.$region.' use allow');
+	run('/rg flag '.$region.' interact allow');
+	run('/rg flag '.$region.' vehicle-destroy allow');
+	run('/rg flag '.$region.' ride allow');
+	die(color(GOLD).'Done!');
+<<<

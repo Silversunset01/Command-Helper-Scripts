@@ -1,4 +1,5 @@
-#~default:/rain $ = >>>
+#~members:/rain $ = >>>
+#
 #  if($ == 'on') {
 #	runas(~console,'/weather rain');
 #	die(color(GOLD).'Rain ON');

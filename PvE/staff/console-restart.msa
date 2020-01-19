@@ -1,0 +1,11 @@
+*:/restart [$] = >>>
+	if (player() == '~console') {
+		runas(~console,'/title @a title {"text":"Restarting in 10 seconds","color":"red"}');
+		runas(~console,'/title @a subtitle {"text":"Hold on to your britches","color":"gray","italic":"true"}');
+		set_timeout(10000, closure(
+			runas(~console,'/kickall Server Restarting!');
+			set_timeout(1000, closure(runas(~console,'/stop')));
+		));		
+	}
+<<<
+

@@ -1,0 +1,17 @@
+~admin:/spawner [$mob] = >>>
+	@pCoords = pinfo(player(),1)
+	@x = floor(@pCoords[0]);
+	@y = floor(@pCoords[1])+3;
+	@z = floor(@pCoords[2]);
+	runas(~console,'/setblock '.@x.' '.@y.' '.@z.' minecraft:spawner{SpawnData:{id:"minecraft:'.$mob.'"}} replace');
+    die(color(GOLD).$mob.' spawner placed at: '.@x.' '.@y.' '.@z);
+	
+<<<
+
+~admin:/ptest = >>>
+	@pCoords = pinfo(player(),1);
+	@x = floor(@pCoords[0]);
+	@y = floor(@pCoords[1])+3;
+	@z = floor(@pCoords[2]);
+	die(color(GREEN).'X: '.@x.', Y: '.@y.', Z: '.@z);
+<<<
