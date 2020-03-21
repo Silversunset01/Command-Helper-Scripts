@@ -18,6 +18,4 @@ bind(player_death, null, null, @e) {
 	@y = floor(@pCoords[1]);
 	@z = floor(@pCoords[2]);
 	die(colorize('&a[&2RIP&a] &7You died at: &bx:'.@x.', y: '.@y.', z:'.@z.' &7in '.@pWorldName));
-		
-	unbind();
 }

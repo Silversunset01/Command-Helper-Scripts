@@ -11,7 +11,20 @@
 		@x = floor(@pCoords[0] / 8);
 		@y = floor(@pCoords[1]);
 		@z = floor(@pCoords[2] / 8);
-		die(colorize('&aYour nether-side portal coords should be &bx:'.@x.', z:'.@z));
+		
+		# nether spawn coords
+		@xN = -3;
+		@zN = 0;
+		@r = 185;
+
+		@d = floor(sqrt(pow(@xN - @x ,2) + pow(@zN - @z ,2)));
+		if (@d < @r) {
+			@valid = ""
+		} else {
+			@valid = "&c[Warning] &rPortals in the nether must be within &c".@r." &rblocks of spawn.\nThis portal would be &c".@d."&r blocks and will not light."
+		}
+		
+		die(colorize('&aYour nether-side portal coords should be &bx:'.@x.', z:'.@z.'\n'.@valid));
 	} else {
 	
 	}
