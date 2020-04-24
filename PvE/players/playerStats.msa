@@ -1,0 +1,10 @@
+# alias /statz to something more normal
+*:/stats [$] = >>>
+	if (!$) {
+		@p = player();	
+	} else {
+		@p = $;
+	}
+	run('/statz list '.@p);
+<<<
+
